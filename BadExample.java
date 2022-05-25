@@ -9,9 +9,7 @@ class BadExample {
     }
     public static void printFirstRed(List<Shoe> listOfShoes) {
         Optional<Shoe> firstRedShoe = firstOfColor(listOfShoes, "red");
-        if (firstRedShoe.isPresent()) {
-            System.out.println("First red shoe is " + firstRedShoe.get().name);
-        }
+        firstRedShoe.ifPresent(shoe -> System.out.println("First red shoe is " + shoe.name));
     }
 }
 
