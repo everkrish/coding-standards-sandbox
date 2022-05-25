@@ -1,19 +1,17 @@
 import java.util.List;
 
 class BadExample {
+    private static Shoe firstOfColor(List<Shoe> listOfShoes, String color) {
+        for (Shoe shoe : listOfShoes) {
+            if (shoe.color.equals(color)) {
+                return shoe;
+            }
+        }
+        return null;
+    }
     public static void printFirstRedAndBlue(List<Shoe> listOfShoes) {
-        for (Shoe shoe : listOfShoes) {
-            if (shoe.color.equals("red")) {
-                System.out.println("The first red shoe is " + shoe.name);
-                break;
-            }
-        }
-        for (Shoe shoe : listOfShoes) {
-            if (shoe.color.equals("blue")) {
-                System.out.println("The first blue shoe is " + shoe.name);
-                break;
-            }
-        }
+        System.out.println("First red shoe is " + firstOfColor(listOfShoes, "red").name);
+        System.out.println("First blue shoe is " + firstOfColor(listOfShoes, "blue").name);
     }
 }
 
