@@ -14,6 +14,18 @@ class BadExample {
 }
 
 class Shoe {
-    String color;
+    private String color;
     String name;
+
+    /*
+     * AVOID!
+     * Usually this interface would be used internally by Everlaw, so we can avoid having excess
+     * code by making color public.
+     */
+    public String getColor() {
+        return color;
+    }
+    public void setColor(String color) {
+        this.color = color;
+    }
 }
